@@ -1,0 +1,57 @@
+/* Import Tailwind's base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define the custom local font */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/fonts/minecraft_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom styles for the Minecraft theme */
+body {
+    /* Use the new local font as the primary font */
+    font-family: 'Minecraft', cursive;
+    /* Creates the fixed, gray grid background */
+    background-color: #363636;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-attachment: fixed; /* This makes the background stay in place on scroll */
+    color: #E0E0E0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevents image blurring on scaling */
+    image-rendering: pixelated;
+}
+
+/* Custom shadow for a "blocky" Minecraft feel */
+.minecraft-shadow {
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Remove pixelation from icons */
+.fa, .fab, .fas, .far {
+    image-rendering: auto;
+}
+
+/* Styling for the text selection to match the theme */
+::selection {
+    background-color: #6EFA7A;
+    color: #202020;
+}
+
+/* Blinking cursor for Typed.js */
+.typed-cursor {
+    color: #6EFA7A;
+    opacity: 1;
+    animation: typed-blink 0.7s infinite;
+}
+
+@keyframes typed-blink {
+    50% { opacity: 0.0; }
+}
